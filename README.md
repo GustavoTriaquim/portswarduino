@@ -6,7 +6,7 @@ Este projeto implementa um **simulador de portas lógicas digitais** (AND, OR, X
 
 - Arduino Uno
 - Display LCD 16x2 (com interface paralela)
-- 6 Botões:
+- 5 Botões:
   - `botaoAlt` (pino 7): entrada A
   - `botaoNOT` (pino 6): entrada B
   - `botao1`, `botao2`, `botao3` (pinos 10, 9, 8): seleção de operação
