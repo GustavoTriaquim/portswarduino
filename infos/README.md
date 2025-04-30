@@ -56,3 +56,7 @@ Exemplo:
 - `setup()`: inicializa o LCD, pinos e comunicação serial.
 - `loop()`: alterna entre modo de menu e visualização do resultado lógico.
 - Funções básicas de lógica booleana são usadas diretamente (`&&`, `||`, `^`, `!`).
+
+## Esquema do Circuito
+
+![Sketch](../assets/sketch.png)
