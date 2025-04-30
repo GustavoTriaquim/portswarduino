@@ -43,12 +43,12 @@ Este projeto implementa um **simulador de portas lógicas digitais** (AND, OR, X
 
 O monitor serial exibe dados no seguinte formato:
 ```
-[LCD]menuAtual|opcaoAtual|A|-|resultado
+[LCD]menuAtual|opcaoAtual|A|B|resultado
 ```
 
 Exemplo:
 ```
-[LCD]0|1|1|-|1
+[LCD]AND / OR / XOR|AND|0|1|0
 ```
 
 ## 📁 Estrutura do Código
