@@ -74,7 +74,7 @@ void loop() {
       } else if (menuAtual == 2) {
         lcd.print("NOT");
         lcd.setCursor(0, 1);
-        
+
         if (opcaoAtual == 1) lcd.print("NOT");
         if (opcaoAtual == 2) lcd.print("NOT");
         if (opcaoAtual == 3) lcd.print("NOT");
@@ -98,27 +98,59 @@ void loop() {
 
     lcd.setCursor(0, 1);
 
-    if (opcaoAtual == 1) {
-      resultado = A && B;
-      lcd.print("AND ");
-    } else if (opcaoAtual == 2) {
-      resultado = A || B;
-      lcd.print("OR ");
-    } else if (opcaoAtual == 3) {
-      resultado = A ^ B;
-      lcd.print("XOR ");
+    if (menuAtual == 0) {
+      if (opcaoAtual == 1) {
+        resultado = A && B;
+        lcd.print("AND ");
+      } else if (opcaoAtual == 2) {
+        resultado = A || B;
+        lcd.print("OR  ");
+      } else if (opcaoAtual == 3) {
+        resultado = A ^ B;
+        lcd.print("XOR ");
+      }
+      lcd.print(A);
+      lcd.print(" ");
+      lcd.print(B);
+      lcd.print(" ");
+      lcd.print(resultado);
+    } else if (menuAtual == 1) {
+      if (opcaoAtual == 1) {
+        resultado = !(A && B);
+        lcd.print("NAND");
+        lcd.print(A);
+        lcd.print(" ");
+        lcd.print(B);
+        lcd.print(" ");
+        lcd.print(resultado);
+      } else if (opcaoAtual == 2) {
+        resultado = !(A || B);
+        lcd.print("NOR ");
+        lcd.print(A);
+        lcd.print(" ");
+        lcd.print(B);
+        lcd.print(" ");
+        lcd.print(resultado);
+      } else if (opcaoAtual == 3) {
+        resultado = !(A ^ B);
+        lcd.print("XNOR");
+        lcd.print(A);
+        lcd.print(" ");
+        lcd.print(B);
+        lcd.print(" ");
+        lcd.print(resultado);
+      }
+    } else if (menuAtual == 2) {
+      resultado = !A;
+      lcd.print("NOT ");
+      lcd.print(A);
+      lcd.print(" ");
+      lcd.print(resultado);
     }
 
-    if (menuAtual == 1) resultado = !resultado;
-
     digitalWrite(led, resultado ? HIGH : LOW);
-    lcd.print(A);
-    lcd.print(" ");
-    lcd.print(B);
-    lcd.print(" ");
-    lcd.print(resultado);
 
-    String lcdData = "[LCD]" + String(menuAtual) + "|" + String(opcaoAtual) + "|" + String(A) + "|" + String(B) + "|" + String(resultado);
+    String lcdData = "[LCD]" + String(menuAtual) + "|" + String(opcaoAtual) + "|" + String(A) + "|-|" + String(resultado);
     Serial.println(lcdData);
 
     if (digitalRead(botao1) == HIGH || digitalRead(botao2) == HIGH || digitalRead(botao3) == HIGH) {
