@@ -59,4 +59,4 @@ Exemplo:
 
 ## Esquema do Circuito
 
-![Sketch](./assets/sketch.png)
+![Sketch](./sketch.png)
